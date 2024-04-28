@@ -110,6 +110,12 @@ int main() {
         std::string method, path, protocol;
         iss_line >> method >> path >> protocol;
 
+
+        // std::cout << method << std::endl;
+        // std::cout << path << std::endl;
+        // std::cout << protocol << std::endl;
+        
+        
         // Serve HTML file
         serve_html(new_socket, path);
 
