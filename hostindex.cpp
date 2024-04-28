@@ -122,4 +122,6 @@ int main() {
 }
 /*
 c++ -o hi hostindex.cpp && ./hi
+
+https://chat.openai.com/c/7d1c4b14-c152-4eda-9d42-16a0d80f1dbe
 */
