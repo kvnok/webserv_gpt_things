@@ -52,8 +52,6 @@ void serve_html(int client_socket, const std::string& request_path) {
     send(client_socket, response_str.c_str(), response_str.length(), 0);
 }
 
-
-
 int main() {
     int server_fd, new_socket;
     struct sockaddr_in address;
@@ -110,11 +108,10 @@ int main() {
         std::string method, path, protocol;
         iss_line >> method >> path >> protocol;
 
-
-        // std::cout << method << std::endl;
-        // std::cout << path << std::endl;
-        // std::cout << protocol << std::endl;
-        
+        std::cout << method << std::endl;
+        std::cout << path << std::endl;
+        std::cout << protocol << std::endl;
+        std::cout << "########################" << std::endl;
         
         // Serve HTML file
         serve_html(new_socket, path);
