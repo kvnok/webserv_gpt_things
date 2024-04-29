@@ -16,7 +16,7 @@
 #define BUFFER_SIZE 1024
 
 void serve_html(int client_socket, const std::string& request_path) {
-    std::string filename = (request_path == "/") ? "index.html" : request_path.substr(1);
+    std::string filename = (request_path == "/") ? "www/index.html" : request_path.substr(1);
     std::ifstream html_file(filename);
     static bool error_printed = false; // Flag to track if error message has been printed
 
@@ -124,9 +124,5 @@ int main() {
     return 0;
 }
 /*
-c++ -o hi hostindex.cpp && ./hi
-
 https://chat.openai.com/c/7d1c4b14-c152-4eda-9d42-16a0d80f1dbe
-
-netstat -an | grep 8080
 */
