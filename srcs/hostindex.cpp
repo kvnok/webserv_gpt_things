@@ -16,7 +16,7 @@
 #define BUFFER_SIZE 1024
 
 void serve_html(int client_socket, const std::string& request_path) {
-    std::string filename = (request_path == "/") ? "www/index.html" : request_path.substr(1);
+    std::string filename = (request_path == "/") ? "../www/index.html" : "../" + request_path;
     std::ifstream html_file(filename);
     static bool error_printed = false; // Flag to track if error message has been printed
 
