@@ -99,6 +99,7 @@ int main() {
         // Receive HTTP request
         recv(new_socket, buffer, BUFFER_SIZE, 0);
         std::string request(buffer);
+        std::cout << "request: |" << request << "|" << std::endl;
 
         // Parse request path
         std::istringstream iss(request);
@@ -108,10 +109,10 @@ int main() {
         std::string method, path, protocol;
         iss_line >> method >> path >> protocol;
 
-        std::cout << method << std::endl;
-        std::cout << path << std::endl;
-        std::cout << protocol << std::endl;
-        std::cout << "########################" << std::endl;
+        // std::cout << method << std::endl;
+        // std::cout << path << std::endl;
+        // std::cout << protocol << std::endl;
+        // std::cout << "########################" << std::endl;
         
         // Serve HTML file
         serve_html(new_socket, path);
@@ -125,4 +126,7 @@ int main() {
 }
 /*
 https://chat.openai.com/c/7d1c4b14-c152-4eda-9d42-16a0d80f1dbe
+*/
+/*
+./compile_stuff.sh && ./hostindex
 */
