@@ -44,11 +44,11 @@ void serve_html(int client_socket, const std::string& request_path) {
     std::stringstream response;
     response << "HTTP/1.1 200 OK\r\n";
     response << "Content-Type: text/html\r\n";
-    response << "Connection: keep-alive\r\n"; // Keep the connection alive
+    // response << "Connection: keep-alive\r\n";
     response << "\r\n";
     response << html_file.rdbuf();
-
     std::string response_str = response.str();
+    std::cout << "response: |" << response_str << "|" << std::endl;
     send(client_socket, response_str.c_str(), response_str.length(), 0);
 }
 
