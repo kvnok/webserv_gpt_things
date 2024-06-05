@@ -48,7 +48,7 @@ void serve_html(int client_socket, const std::string& request_path) {
     response << "\r\n";
     response << html_file.rdbuf();
     std::string response_str = response.str();
-    std::cout << "response: |" << response_str << "|" << std::endl;
+    // std::cout << "response: |" << response_str << "|" << std::endl;
     send(client_socket, response_str.c_str(), response_str.length(), 0);
 }
 
@@ -99,7 +99,7 @@ int main() {
         // Receive HTTP request
         recv(new_socket, buffer, BUFFER_SIZE, 0);
         std::string request(buffer);
-        std::cout << "request: |" << request << "|" << std::endl;
+        std::cout << "request: |\n" << request << "|";
 
         // Parse request path
         std::istringstream iss(request);
